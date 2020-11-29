@@ -1,0 +1,24 @@
+CREATE DATABASE boletim;
+
+USE boletim;
+
+CREATE TABLE Aluno(
+	IdAluno INT PRIMARY KEY IDENTITY NOT NULL,
+	Nome VARCHAR(100) NOT NULL,
+	Ra VARCHAR(20),
+	Idade INT 
+);
+
+CREATE TABLE Materia(
+	IdMateria INT PRIMARY KEY IDENTITY NOT NULL,
+	Titulo VARCHAR(50),
+
+);
+
+CREATE TABLE Trabalho(
+	IdTrabalho INT PRIMARY KEY IDENTITY NOT NULL,
+	Nota Decimal,
+
+	IdMateria INT FOREIGN KEY REFERENCES Materia(IdMateria),
+	IdAluno INT FOREIGN KEY REFERENCES Aluno(IdAluno)
+);
